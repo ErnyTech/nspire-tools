@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/nspire-tools
+nspire-tools.so
+nspire-tools.dylib
+nspire-tools.dll
+nspire-tools.a
+nspire-tools.lib
+nspire-tools-test-*
+*.exe
+*.o
+*.obj
+*.lst

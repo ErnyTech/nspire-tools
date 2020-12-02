@@ -1,0 +1,12 @@
+{
+    "name": "nspire-tools",
+    "description": "The Swiss Army Knife for Ti-NSpire",
+    "copyright": "Copyright © 2020, Ernesto Castellotti",
+    "authors": [
+        "Ernesto Castellotti"
+    ],
+    "license": "MPL-2.0",
+    "dependencies": {
+        "libnspire-dlang": "~>0.0.1"
+    }
+}
