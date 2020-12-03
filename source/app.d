@@ -4,8 +4,6 @@ import nspire;
 import nspire.device;
 import std.stdio;
 import std.path : baseName;
-import std.string : stripLeft;
-import std.algorithm.searching : startsWith;
 
 enum mainName = "nspire-tools";
 enum prefix = "nspire-";
@@ -14,8 +12,8 @@ int main(string[] args) {
     auto name = args[0].baseName;
 
     if (name != mainName) {
-        if (name.startsWith(prefix)) {
-            name = name.stripLeft(prefix);
+        if (name[0..prefix.length] == prefix) {
+            name = name[prefix.length..$];
         }
         
         return call(name, args[1..$]);
