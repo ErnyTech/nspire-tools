@@ -1,0 +1,22 @@
+name: Build nspire-tools and push
+
+on:
+  release:
+    types: [published]
+jobs:
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ernytech
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ernytech/nspire-tools
+          tag_with_ref: true
+          tags: latest
+          always_pull: true
+          dockerfile: docker/Dockerfile
